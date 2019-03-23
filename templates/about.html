@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+{% if  active  %}
+{% else %}
+{% block body %}
+<li><a  data-hover="Home"  href="{{url_for('home')}}"><span>Home</span></a></li>
+<li><a data-hover="About" class="active" href="{{url_for('about')}}"><span>About</span></a></li>
+<li><a data-hover="Rooms"  href="{{url_for('rooms')}}"><span>Rooms</span></a></li>
+<li><a data-hover="Gallery" href="{{url_for('gallery')}}"><span>Gallery</span></a></li>
+<li><a data-hover="Contact Us" href="{{url_for('contact')}}"><span>contact Us</span></a></li>
+{% endblock %}
+
+{% endif %}
+
+
+            <section class="image-head-wrapper" style="background-image: url('static/images/banner3.jpg');">
+                <div class="inner-wrapper">
+                    <h1>About us</h1>
+                </div>
+            </section>
+            <div class="clearfix"></div>
+
+
+            <section class="about-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 about-left">
+                            <p>"The world is  a book and those who do not travel can not read the book."  <label>-St.Augustine</label></p>
+                        </div>
+                        <div class="col-md-7 about-right">
+                            
+                            <p>Cox's Bazaar is going on holiday with family or friends.You are away from the hotel to the car.At the hotel,the laughable staff welcomes you with the welcome drinks,From you check-in,the room reached your luggage,And you opened the room door and saw a comfortable bed waiting for ou and aa room with all the latest amenities,the whole hotel offers a wide range of free WiFi internet.You got to touch the porch,the fresh air that come out of the Bay of Bengal.</p><br>
+<h3>Here are some special facilities for you</h3>
+                            <ul class="list-unstyled list-inline">
+                                <li> Best Room</li>
+                                <li>Welcome Drinks</li>
+                                <li>Daily news paper in room</li>
+                                <li>Wifi connectivity</li>
+                                <li>Complementary breakfast</li>
+                                <li>One dinner in dew drop restaurant(bangla/chines)</li>
+                                <li>10% discount in restaurant</li>
+                                <li>Mineral water in room</li>
+                                <li>Airport pickup and drop</li>
+                                <li>10% discount on booking on the site</li>
+                              
+                            </ul>
+                            <span> </span> 
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </section>
+
+{% endblock %}

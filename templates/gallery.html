@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% if  active  %}
+{% else %}
+{% block body %}
+<li><a  data-hover="Home"  href="{{url_for('home')}}"><span>Home</span></a></li>
+<li><a data-hover="About"  href="{{url_for('about')}}"><span>About</span></a></li>
+<li><a data-hover="Rooms"  href="{{url_for('rooms')}}"><span>Rooms</span></a></li>
+<li><a data-hover="Gallery" class="active" href="{{url_for('gallery')}}"><span>Gallery</span></a></li>
+<li><a data-hover="Contact Us" href="{{url_for('contact')}}"><span>contact Us</span></a></li>
+{% endblock %}
+
+{% endif %}
+
+            <section class="image-head-wrapper">
+                <div class="inner-wrapper">
+                    <h1>Gallery</h1>
+                </div>
+            </section>
+            <div class="clearfix"></div>
+
+            <section class="gallery-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="grid hover-effect">
+                            <div class="grid-sizer"></div>
+                            <div class="grid-item percent37 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery1-1.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery1.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent25 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery2-2.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery2.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent37 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery3-3.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery3.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent25 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery4-4.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery4.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent37 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery5-5.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery5.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent20 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery6-6.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery6.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent20 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery7-7.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery7.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                            <div class="grid-item percent20 gallery-image">
+                                <a class="example-image-link img-responsive" href="{{url_for('static',filename='images/gallery8-8.jpg')}}" data-lightbox="example-1"><img src="{{url_for('static',filename='images/gallery8.png')}}" class="img-responsive" alt="gallery1"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,187 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% if  active  %}
+{% else %}
+{% block body %}
+<li><a  data-hover="Home"  href="{{url_for('home')}}"><span>Home</span></a></li>
+<li><a data-hover="About"  href="{{url_for('about')}}"><span>About</span></a></li>
+<li><a data-hover="Rooms" class="active" href="{{url_for('rooms')}}"><span>Rooms</span></a></li>
+<li><a data-hover="Gallery" href="{{url_for('gallery')}}"><span>Gallery</span></a></li>
+<li><a data-hover="Contact Us" href="{{url_for('contact')}}"><span>contact Us</span></a></li>
+{% endblock %}
+
+{% endif %}
+
+<section class="image-head-wrapper" style="background-image: url('static/images/banner.jpg');">
+    <div class="inner-wrapper">
+        <h1>Rooms</h1>
+    </div>
+</section>
+<div class="clearfix"></div>
+
+<section class="gallery-block gallery-front">
+
+  <div class="book-now-btn"><h2>Quality Best</h2></div>
+  <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ dulex_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+dulex_room_img)}}">
+                    <div class="overlay">
+                       <a class="info pop example-image-link img-responsive" href="{{url_for('static',filename='images/room1.png')}}" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <p><a href="{{url_for('booking')}}">dulex room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('dulex')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ super_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+super_room_img)}}">
+                    <div class="overlay">
+                        <a class="info pop example-image-link img-responsive" href="{{url_for('static',filename='images/room2.png')}}" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <p><a href="{{url_for('booking')}}">super room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('super')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ single_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+single_room_img)}}">
+                    <div class="overlay">
+                       <a class="info pop example-image-link img-responsive" href="{{url_for('static',filename='images/room3.png')}}" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <p><a href="{{url_for('booking')}}">single room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('single')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+
+                <div class="gallery-image">
+                     <div class="book-now-btn">{{ double_price }}</div>
+
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+double_room_img) }}">
+                    <div class="overlay">
+                        <a class="info pop example-image-link img-responsive" href="{{url_for('static',filename='images/room4.png')}}" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <p><a href="{{url_for('booking')}}">double room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('double')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+<br> <br>
+                <div class="gallery-image">
+                     <div class="book-now-btn">{{ couple_price }}</div>
+
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+couple_room_img)}}">
+                    <div class="overlay">
+                        <a class="info pop example-image-link img-responsive" href="{{url_for('static',filename='images/room4.png')}}" data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                        <p><a href="{{url_for('booking')}}">Couple<button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('couple')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <hr>
+    <div class="book-now-btn"><h2>Quality Good</h2></div>
+     <div class="container">
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <br><br>
+            <div class="gallery-image">
+                <div class="book-now-btn">{{ good_single_price }}</div>
+                <img class="img-responsive" src="{{url_for('static',filename='images/'+good_single_room_img)}}">
+                <div class="overlay" >
+                     <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+                    <a href="{{url_for('good_single')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+                  </div>
+
+            </div>
+        </div>
+
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <br><br>
+          <div class="gallery-image">
+              <div class="book-now-btn">{{ good_double_price }}</div>
+              <img class="img-responsive" src="{{url_for('static',filename='images/'+good_double_room_img)}}">
+              <div class="overlay" >
+                   <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+                  <a href="{{url_for('good_double')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+                </div>
+
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+        <br><br>
+          <div class="gallery-image">
+              <div class="book-now-btn">{{ good_couple_price }}</div>
+              <img class="img-responsive" src="{{url_for('static',filename='images/'+good_couple_room_img)}}">
+              <div class="overlay" >
+                   <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+                  <a href="{{url_for('good_couple')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+                </div>
+
+          </div>
+      </div>
+      </div>
+
+    </div>
+</section>
+
+<!--service block--->
+<section class="service-block">
+    <div class="bg-set-col">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                    <div class="service-details text-center">
+                        <div class="service-image">
+                            <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/wifi.png')}}">
+                        </div>
+                        <h4><a>free wifi</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                    <div class="service-details text-center">
+                        <div class="service-image">
+                            <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/key.png')}}">
+                        </div>
+                        <h4><a>room service</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                    <div class="service-details text-center">
+                        <div class="service-image">
+                            <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/car.png')}}">
+                        </div>
+                        <h4><a>free parking</a></h4>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                    <div class="service-details text-center">
+                        <div class="service-image">
+                            <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/user.png')}}">
+                        </div>
+                        <h4><a>customer support</a></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,215 @@
+
+{% extends 'layout.html' %}
+{% block content %}
+
+{% if  active  %}
+{% else %}
+{% block body %}
+<li><a  data-hover="Home" class="active" href="{{url_for('home')}}"><span>Home</span></a></li>
+<li><a data-hover="About"  href="{{url_for('about')}}"><span>About</span></a></li>
+<li><a data-hover="Rooms"  href="{{url_for('rooms')}}"><span>Rooms</span></a></li>
+<li><a data-hover="Gallery" href="{{url_for('gallery')}}"><span>Gallery</span></a></li>
+<li><a data-hover="Contact Us" href="{{url_for('contact')}}"><span>contact Us</span></a></li>
+{% endblock %}
+
+{% endif %}
+
+<div id="myCarousel1" class="carousel slide" data-ride="carousel">
+               <!-- Indicators -->
+
+               <ol class="carousel-indicators">
+                   <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                   <li data-target="#myCarousel1" data-slide-to="1"></li>
+               <li data-target="#myCarousel1" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active"> <img src="{{url_for('static',filename='images/banner.png')}}" style="width:100%; height: 500px" alt="First slide">
+                        <div class="carousel-caption">
+                            <h1>Safe<br> Hotel</h1>
+                                <p>100% safe for you</p><br>
+                                  <p>"One of the greatest joy of the world to wake <br>
+                                        up in a new city is to asleep." -Freya Stack</p><br>
+                                    <p>"Travel is one of the best ways to find yourself."-Lawrence Dourell </p>
+                        </div>
+                    </div>
+                    <div class="item"> <img src="{{url_for('static',filename='images/banner2.png')}}" style="width:100%; height: 500px" alt="Second slide">
+                        <div class="carousel-caption">
+                            <h1> Safe Hotel</h1>
+                            <p>100% safe for you</p><br><br>
+                            <p>"One of the greatest joy of the world to wake <br>
+                                  up in a new city is to asleep." -Freya Stack</p><br>
+                              <p>"Travel is one of the best ways to find yourself."-Lawrence Dourell </p>
+                        </div>
+                    </div>
+                    <div class="item"> <img src="{{url_for('static',filename='images/banner3.png')}}" style="width:100%; height: 500px" alt="Third slide">
+                        <div class="carousel-caption">
+                            <h1> Safe Hotel</h1>
+                            <p>100% safe for you</p><br>
+                              <p>"One of the greatest joy of the world to wake <br>
+                                    up in a new city is to asleep." -Freya Stack</p><br>
+                                <p>"Travel is one of the best ways to find yourself."-Lawrence Dourell </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <a class="left carousel-control" href="#myCarousel1" data-slide="prev"> <img src="{{url_for('static',filename='images/icons/left-arrow.png')}}" onmouseover="this.src = 'static/images/icons/left-arrow-hover.png'" onmouseout="this.src = 'static/images/icons/left-arrow.png'" alt="left"></a>
+                <a class="right carousel-control" href="#myCarousel1" data-slide="next"><img src="{{url_for('static',filename='images/icons/right-arrow.png')}}" onmouseover="this.src = 'static/images/icons/right-arrow-hover.png'" onmouseout="this.src = 'static/images/icons/right-arrow.png'" alt="left"></a>
+
+            </div>
+            <div class="clearfix"></div>
+
+
+<section class="service-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                <div class="service-details text-center">
+                    <div class="service-image">
+                        <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/wifi.png')}}">
+                    </div>
+                    <h4><a>free wifi</a></h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                <div class="service-details text-center">
+                    <div class="service-image">
+                        <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/key.png')}}">
+                    </div>
+                    <h4><a>room service</a></h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                <div class="service-details text-center">
+                    <div class="service-image">
+                        <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/car.png')}}">
+                    </div>
+                    <h4><a>free parking</a></h4>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                <div class="service-details text-center">
+                    <div class="service-image">
+                        <img alt="image" class="img-responsive" src="{{url_for('static',filename='images/icons/user.png')}}">
+                    </div>
+                    <h4><a>customer support</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="gallery-block gallery-front">
+
+
+<div class="book-now-btn"><h2>Quality Best</h2></div>
+<hr>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ dulex_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+dulex_room_img)}}">
+                    <div class="overlay">
+                         <p><a href="{{url_for('booking')}}">dulex room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('dulex')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ super_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+super_room_img)}}">
+                    <div class="overlay">
+                         <p><a href="{{url_for('booking')}}">super room    <button type="button" class="book-now-btn" >Book Now</button> </a>
+                        <a href="{{url_for('super')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ single_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+single_room_img)}}">
+                    <div class="overlay">
+                         <p><a href="{{url_for('booking')}}">Single room    <button type="button" class="book-now-btn">Book Now</button> </a>
+                        <a href="{{url_for('single')}}"> <button type="button" class="book-now-btn"  >Details</button></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="gallery-image">
+                    <div class="book-now-btn">{{ double_price }}</div>
+                    <img class="img-responsive" src="{{url_for('static',filename='images/'+double_room_img)}}">
+                    <div class="overlay" >
+
+                        <p><a href="{{url_for('booking')}}">double room    <button type="button" class="book-now-btn"  >Book Now</button>
+                        <a href="{{url_for('double')}}"> <button type="button" class="book-now-btn"  >Details</button></a></p>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+          <br><br>
+            <div class="gallery-image">
+                <div class="book-now-btn">{{ couple_price }}</div>
+                <img class="img-responsive" src="{{url_for('static',filename='images/'+couple_room_img)}}">
+                <div class="overlay" >
+                     <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+                    <a href="{{url_for('couple')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+                  </div>
+            </div>
+        </div>
+
+ </div>
+<hr>
+<div class="book-now-btn"><h2>Quality Good</h2></div>
+ <div class="container">
+
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+      <br><br>
+        <div class="gallery-image">
+            <div class="book-now-btn">{{ good_single_price }}</div>
+            <img class="img-responsive" src="{{url_for('static',filename='images/'+good_single_room_img)}}">
+            <div class="overlay" >
+                 <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+                <a href="{{url_for('good_single')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+              </div>
+
+        </div>
+    </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <br><br>
+      <div class="gallery-image">
+          <div class="book-now-btn">{{ good_double_price }}</div>
+          <img class="img-responsive" src="{{url_for('static',filename='images/'+good_double_room_img)}}">
+          <div class="overlay" >
+               <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+              <a href="{{url_for('good_double')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+            </div>
+
+      </div>
+  </div>
+
+  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+    <br><br>
+      <div class="gallery-image">
+          <div class="book-now-btn">{{ good_couple_price }}</div>
+          <img class="img-responsive" src="{{url_for('static',filename='images/'+good_couple_room_img)}}">
+          <div class="overlay" >
+               <p><a href="{{url_for('booking')}}">Couple Room <button type="button" class="book-now-btn"  >Book Now</button> </a>
+              <a href="{{url_for('good_couple')}}"> <button type="button" class="book-now-btn"  >Details</button> </a></p>
+            </div>
+
+      </div>
+  </div>
+  </div>
+
+</div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{% if  active  %}
+{% else %}
+{% block body %}
+<li><a  data-hover="Home"  href="{{url_for('home')}}"><span>Home</span></a></li>
+<li><a data-hover="About"  href="{{url_for('about')}}"><span>About</span></a></li>
+<li><a data-hover="Rooms"  href="{{url_for('rooms')}}"><span>Rooms</span></a></li>
+<li><a data-hover="Gallery"  href="{{url_for('gallery')}}"><span>Gallery</span></a></li>
+<li><a data-hover="Contact Us" class="active" href="{{url_for('contact')}}"><span>contact Us</span></a></li>
+{% endblock %}
+
+{% endif %}
+
+<section class="image-head-wrapper" style="background-image: url('static/images/banner4.jpg');">
+   <div class="inner-wrapper">
+       <h1>Contact Us</h1>
+<br><br>
+        <p>"When a new stranger is in a country,people get the feeling of being surprised by the age of childhood." -Bill Bryson
+   </div>
+</section>
+<div class="clearfix"></div>
+
+
+<section class="contact-block">
+   <div class="container">
+       <div class="col-md-6 contact-left-block">
+           <h3><span>Contact </span>Us</h3>
+           <p class="text-left">"Safe Hotel" is one of the biggest famous hotel in Bangladesh. We are giving you the highest quality service.For any kind of problem our costomar service will work for you.Thank you ,sir.</p>
+           <p class="text-right">Cox's Bazar,kolatoli,Chittagong,Bangladesh <i class="fa fa-map-marker fa-lg"></i></p>
+           <p class="text-right"><a href="+8801837466085"> +8801837466085 <i class="fa fa-phone fa-lg"></i></a></p>
+           <p class="text-right"><a href="mailto:rahichowdory@gmail.com"> pritomi.aakmam85@gmail.com <i class="fa fa-envelope"></i></a></p>
+       </div>
+       <div class="col-md-6 contact-form">
+           <h3>Send a <span>Message</span></h3>
+           <form action="#" method="post">
+               <input type="text" class="form-control" name="Name" placeholder="Name" required="">
+               <input type="email" class="form-control" name="Email" placeholder="Email" required="">
+               <textarea class="form-control" name="Message" placeholder="Message Here...." required=""></textarea>
+               <input type="submit" class="submit-btn" value="Submit">
+           </form>
+       </div>
+       <div class="clearfix"></div>
+   </div>
+</section>
+
+<!---map--->
+<section class="offspace-70">
+   <div class="map">
+       <div class="container">
+           <iframe src="https://www.google.com/maps/dir/''/feni+computer+Institute/@23.034538,91.3492917,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x375369a47241f7ef:0xe1c12206d8f619e0!2m2!1d91.4193321!2d23.0345534"  frameborder="0" style="border:0; width: 100%; height: 400px" allowfullscreen></iframe>
+       </div>
+   </div>
+</section>
+{% endblock %}
